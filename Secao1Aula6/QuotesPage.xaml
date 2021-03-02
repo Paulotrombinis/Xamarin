@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Secao1Aula6.QuotesPage">
+
+    <!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+            iOS="0,20,0,0"
+            Android="0,10,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>-->
+    
+    <ContentPage.Content>
+
+        <StackLayout BindingContext="{x:Reference sliderQuotePage}" HorizontalOptions="Center" VerticalOptions="Center" >
+
+            <Label 
+            Text="{Binding Value,
+                   StringFormat='Font Size: {0}'}}"
+               
+                   Opacity="{Binding Value}"
+            
+                   x:Name="labelQuotePage" />
+            
+            <Slider x:Name="sliderQuotePage" Maximum="50" Minimum="16"/>
+
+            <Label Text="You can't blame gravity for falling in love." FontSize="{Binding Value}" Opacity="{Binding Value}"/>
+
+        </StackLayout>
+        
+        <!--<StackLayout BindingContext="{x:Reference sliderQuotePage}" HorizontalOptions="Center" VerticalOptions="Center" >
+
+           <Label 
+            Text="{Binding Value,
+                   StringFormat='Font Size: {0}'}}"
+               
+               Opacity="{Binding Value}"
+            x:Name="label" />
+            
+            <Slider x:Name="sliderQuotePage" Maximum="50" Minimum="16"/>
+
+            --><!--<Label Text="You can't blame gravity for falling in love." Opacity="{Binding Value}"/>--><!--
+
+        </StackLayout>-->
+
+        <!--<StackLayout BindingContext="{x:Reference sliderQuotePage}" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="{Binding Value,
+                          StringFormat='Font Size: {0}'}}"
+                
+                    Opacity="{Binding Value}"
+            
+                   x:Name="labelQuotePage"
+                />
+            
+            <Slider x:Name="sliderQuotePage" Maximum="50" Minimum="16"/>
+            
+            <Label Text="You can't blame gravity for falling in love." Opacity="{Binding Value}"/>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

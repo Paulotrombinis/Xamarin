@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Padding="0,20,0,0"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Secao1Aula6.ListPage">
+    
+    <!--<ListView x:Name="ListView" SeparatorColor="Green"/>-->
+
+    <!--<ListView x:Name="ListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding Status}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>-->
+
+    <!--<ListView x:Name="ListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell Text="{Binding Name}" Detail="{Binding Status}" ImageSource="{Binding ImageUrl}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>-->
+
+    <!--<ListView x:Name="ListView" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Image Source="{Binding ImageUrl}"/>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Status}" TextColor="Gray"/>
+                        </StackLayout>
+                        <Button Text="Follow"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>-->
+
+    <!--<ListView x:Name="ListView"
+              IsGroupingEnabled="True"
+              GroupDisplayBinding="{Binding Title}"
+              >
+        GroupShortNameBinding="{Binding SortTitle}"
+        
+        >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding Status}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>-->
+
+    <!--<ListView x:Name="ListView" 
+              ItemTapped="ListView_ItemTapped"
+              ItemSelected="ListView_ItemSelected"
+              >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding Status}">
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
+
+    <StackLayout>
+        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+        <ListView x:Name="ListView" IsPullToRefreshEnabled="True" Refreshing="PullToRefresh_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Status}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"></MenuItem>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" CommandParameter="{Binding .}"></MenuItem>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+
+
+</ContentPage>
